@@ -1,0 +1,41 @@
+<section class="section">
+  <div class="container">
+    <p class="breadcrumb"><a href="/modules">← Back to modules</a></p>
+
+    <div class="section-heading">
+      <p class="eyebrow">Skeleton module</p>
+      <h1>Records Module</h1>
+      <p class="lead">
+        A public-safe record listing showing how future client, project or case records
+        could be structured in an ASR-style operational system.
+      </p>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Updated</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% records.forEach((record) => { %>
+            <tr>
+              <td><%= record.id %></td>
+              <td><%= record.name %></td>
+              <td><%= record.type %></td>
+              <td><span class="status-badge"><%= record.status %></span></td>
+              <td><%= record.lastUpdated %></td>
+              <td><a href="/modules/records/<%= record.id %>">View</a></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

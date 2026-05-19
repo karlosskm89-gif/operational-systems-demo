@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Booking workflow placeholder</title>
+  <desc id="desc">A branded placeholder illustration for an ASR booking workflow concept.</desc>
+  <rect width="1200" height="720" fill="#f7efd8"/>
+  <rect x="90" y="80" width="1020" height="560" rx="32" fill="#fffaf0" stroke="#d8bf72" stroke-width="4"/>
+  <text x="140" y="155" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#26394d">Booking Flow</text>
+  <text x="140" y="205" font-family="Arial, sans-serif" font-size="24" fill="#6b5b3e">Inquiry → Availability → Confirmation → Admin Review</text>
+  <g fill="#ffffff" stroke="#3e2a6b" stroke-width="3">
+    <rect x="145" y="285" width="190" height="120" rx="18"/>
+    <rect x="385" y="285" width="190" height="120" rx="18"/>
+    <rect x="625" y="285" width="190" height="120" rx="18"/>
+    <rect x="865" y="285" width="190" height="120" rx="18"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#26394d" text-anchor="middle">
+    <text x="240" y="355">Inquiry</text>
+    <text x="480" y="355">Schedule</text>
+    <text x="720" y="355">Confirm</text>
+    <text x="960" y="355">Admin</text>
+  </g>
+  <g stroke="#b04747" stroke-width="6" stroke-linecap="round">
+    <line x1="345" y1="345" x2="375" y2="345"/>
+    <line x1="585" y1="345" x2="615" y2="345"/>
+    <line x1="825" y1="345" x2="855" y2="345"/>
+  </g>
+  <text x="140" y="545" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#b04747">ASR Web Services</text>
+  <text x="140" y="585" font-family="Arial, sans-serif" font-size="22" fill="#26394d">Practical digital systems for real organisations</text>
+</svg>

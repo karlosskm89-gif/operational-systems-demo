@@ -1,0 +1,29 @@
+[
+  {
+    "id": "INV-2401",
+    "client": "Demo Client A",
+    "service": "Booking workflow setup",
+    "amount": "450.00",
+    "status": "Draft",
+    "issued": "2026-05-02",
+    "due": "2026-05-16"
+  },
+  {
+    "id": "INV-2402",
+    "client": "Demo Organisation C",
+    "service": "Operational support block",
+    "amount": "750.00",
+    "status": "Sent",
+    "issued": "2026-05-04",
+    "due": "2026-05-18"
+  },
+  {
+    "id": "INV-2403",
+    "client": "Demo Client B",
+    "service": "Admin workflow refinement",
+    "amount": "300.00",
+    "status": "Paid",
+    "issued": "2026-04-20",
+    "due": "2026-05-04"
+  }
+]

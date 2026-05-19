@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">ASR starter kit placeholder</title>
+  <desc id="desc">A branded placeholder illustration for the ASR starter kit.</desc>
+  <rect width="1200" height="720" fill="#f7efd8"/>
+  <circle cx="1040" cy="120" r="180" fill="#d8bf72" opacity="0.28"/>
+  <circle cx="130" cy="620" r="220" fill="#3e2a6b" opacity="0.10"/>
+  <rect x="120" y="100" width="960" height="520" rx="36" fill="#fffaf0" stroke="#d8bf72" stroke-width="4"/>
+  <text x="170" y="185" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#26394d">ASR Starter Kit</text>
+  <text x="170" y="240" font-family="Arial, sans-serif" font-size="25" fill="#6b5b3e">Reusable Express/EJS foundation for service-business websites</text>
+  <g fill="#ffffff" stroke="#26394d" stroke-width="3">
+    <rect x="175" y="325" width="240" height="150" rx="22"/>
+    <rect x="480" y="325" width="240" height="150" rx="22"/>
+    <rect x="785" y="325" width="240" height="150" rx="22"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#26394d" text-anchor="middle">
+    <text x="295" y="390">Profiles</text>
+    <text x="600" y="390">Layouts</text>
+    <text x="905" y="390">Workflows</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#6b5b3e" text-anchor="middle">
+    <text x="295" y="425">data-driven content</text>
+    <text x="600" y="425">responsive pages</text>
+    <text x="905" y="425">forms and systems</text>
+  </g>
+  <text x="170" y="555" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#b04747">Practical digital systems for real organisations</text>
+</svg>

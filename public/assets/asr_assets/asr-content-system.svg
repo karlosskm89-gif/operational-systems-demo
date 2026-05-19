@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Content system placeholder</title>
+  <desc id="desc">A branded placeholder illustration for an organisational content system concept.</desc>
+  <rect width="1200" height="720" fill="#eef3f0"/>
+  <rect x="88" y="70" width="1024" height="580" rx="34" fill="#ffffff" stroke="#9caf9d" stroke-width="4"/>
+  <text x="145" y="150" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#26394d">Content System</text>
+  <text x="145" y="202" font-family="Arial, sans-serif" font-size="24" fill="#54665b">News, events, galleries, updates, and long-term support</text>
+  <rect x="145" y="270" width="360" height="270" rx="22" fill="#f7efd8" stroke="#d8bf72" stroke-width="3"/>
+  <rect x="555" y="270" width="500" height="74" rx="16" fill="#fffaf0" stroke="#d8bf72" stroke-width="3"/>
+  <rect x="555" y="370" width="500" height="74" rx="16" fill="#fffaf0" stroke="#d8bf72" stroke-width="3"/>
+  <rect x="555" y="470" width="500" height="74" rx="16" fill="#fffaf0" stroke="#d8bf72" stroke-width="3"/>
+  <g font-family="Arial, sans-serif" fill="#26394d">
+    <text x="185" y="330" font-size="30" font-weight="700">Organisation</text>
+    <text x="185" y="375" font-size="23">Structured updates</text>
+    <text x="185" y="415" font-size="23">Clear public communication</text>
+    <text x="185" y="455" font-size="23">Maintainable workflows</text>
+    <text x="590" y="318" font-size="24" font-weight="700">Article / News workflow</text>
+    <text x="590" y="418" font-size="24" font-weight="700">Event and gallery handling</text>
+    <text x="590" y="518" font-size="24" font-weight="700">Ongoing stewardship</text>
+  </g>
+  <text x="145" y="605" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#b04747">ASR Web Services</text>
+</svg>

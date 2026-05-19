@@ -1,0 +1,38 @@
+{
+  "name": "asr-operational-systems-demo",
+  "version": "1.0.0",
+  "description": "A public-safe ASR operational systems demo for bookings, admin workflows, status handling and export-oriented infrastructure.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "node tests/workflow.test.js"
+  },
+  "keywords": [
+    "admin-dashboard",
+    "admin-workflow",
+    "asr",
+    "booking",
+    "business-operations",
+    "csv-export",
+    "ejs",
+    "express",
+    "internal-tools",
+    "operational-systems",
+    "operational-workflow",
+    "portfolio",
+    "service-business",
+    "workflow",
+    "workflow-demo"
+  ],
+  "author": "ASR Web Services",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

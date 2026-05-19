@@ -1,0 +1,45 @@
+<section class="section">
+  <div class="container">
+    <div class="admin-header">
+      <div>
+        <p class="eyebrow">Admin side</p>
+        <h1>Booking dashboard</h1>
+        <p class="lead">Review incoming requests, filter by status, update operational state, and export workflow data.</p>
+      </div>
+      <a class="btn btn-secondary" href="/admin/export.csv">Export CSV</a>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat"><strong><%= stats.total %></strong><span>Total</span></div>
+      <div class="stat"><strong><%= stats.newCount %></strong><span>New</span></div>
+      <div class="stat"><strong><%= stats.confirmedCount %></strong><span>Confirmed</span></div>
+      <div class="stat"><strong><%= stats.followUpCount %></strong><span>Follow-up</span></div>
+    </div>
+
+    <div class="filter-bar">
+      <% ["All", "New", "Confirmed", "Follow-up", "Closed"].forEach((item) => { %>
+        <a class="<%= status === item ? 'active' : '' %>" href="/admin<%= item === 'All' ? '' : '?status=' + encodeURIComponent(item) %>"><%= item %></a>
+      <% }) %>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Client</th><th>Service</th><th>Date</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody>
+          <% bookings.forEach((booking) => { %>
+            <tr>
+              <td><%= booking.id %></td>
+              <td><%= booking.name %></td>
+              <td><%= booking.service %></td>
+              <td><%= booking.date %> <%= booking.time %></td>
+              <td><span class="status"><%= booking.status %></span></td>
+              <td><a href="/admin/bookings/<%= booking.id %>">Open</a></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

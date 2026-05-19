@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="260" viewBox="0 0 560 260">
+  <rect width="560" height="260" rx="34" fill="#fff9ec"/>
+  <path d="M55 184 L145 82 L225 184 L298 112 L384 184 L460 72 L520 184" fill="none" stroke="#10254b" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="280" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="76" font-weight="700" fill="#a92820">ASR</text>
+  <text x="280" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#10254b">Web Services</text>
+</svg>

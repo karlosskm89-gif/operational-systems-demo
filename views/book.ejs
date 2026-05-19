@@ -1,0 +1,48 @@
+<section class="section">
+  <div class="container narrow">
+    <p class="eyebrow">Public flow</p>
+    <h1>Request a booking</h1>
+    <p class="lead">Submit a sample request and watch it appear in the admin dashboard.</p>
+
+    <% if (errors && errors.length) { %>
+      <div class="alert">
+        <strong>Please check:</strong>
+        <ul>
+          <% errors.forEach((error) => { %><li><%= error %></li><% }) %>
+        </ul>
+      </div>
+    <% } %>
+
+    <form class="form-card" method="post" action="/book">
+      <label>Name
+        <input name="name" value="<%= form.name || '' %>" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" value="<%= form.email || '' %>" required>
+      </label>
+      <label>Phone
+        <input name="phone" value="<%= form.phone || '' %>">
+      </label>
+      <label>Service
+        <select name="service" required>
+          <option value="">Choose a service</option>
+          <% services.forEach((service) => { %>
+            <option value="<%= service.name %>" <%= form.service === service.name ? 'selected' : '' %>><%= service.name %></option>
+          <% }) %>
+        </select>
+      </label>
+      <div class="two-col">
+        <label>Date
+          <input type="date" name="date" value="<%= form.date || '' %>" required>
+        </label>
+        <label>Time
+          <input type="time" name="time" value="<%= form.time || '' %>" required>
+        </label>
+      </div>
+      <label>Message
+        <textarea name="message" rows="4"><%= form.message || '' %></textarea>
+      </label>
+      <button class="btn" type="submit">Submit request</button>
+    </form>
+  </div>
+</section>

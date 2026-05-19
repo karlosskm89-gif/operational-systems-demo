@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" rx="36" fill="#fff9ec"/>
+  <rect x="70" y="90" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
+  <rect x="345" y="90" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
+  <rect x="620" y="90" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
+  <rect x="210" y="300" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
+  <rect x="485" y="300" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
+  <text x="175" y="145" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Inquiry</text>
+  <text x="450" y="145" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Booking</text>
+  <text x="725" y="145" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Admin</text>
+  <text x="315" y="355" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Status</text>
+  <text x="590" y="355" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Export</text>
+  <path d="M280 145 H345" stroke="#a92820" stroke-width="6" stroke-linecap="round"/>
+  <path d="M555 145 H620" stroke="#a92820" stroke-width="6" stroke-linecap="round"/>
+  <path d="M725 200 C725 260 590 260 590 300" stroke="#a92820" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M420 355 H485" stroke="#a92820" stroke-width="6" stroke-linecap="round"/>
+</svg>

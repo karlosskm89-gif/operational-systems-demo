@@ -1,0 +1,38 @@
+[
+  {
+    "id": "BK-1001",
+    "name": "Aoife Murphy",
+    "email": "aoife@example.com",
+    "phone": "087 000 0001",
+    "service": "Initial Consultation",
+    "date": "2026-05-20",
+    "time": "10:00",
+    "message": "Looking for an initial appointment next week.",
+    "status": "Follow-up",
+    "createdAt": "2026-05-17T09:30:00Z"
+  },
+  {
+    "id": "BK-1002",
+    "name": "Daniel O'Brien",
+    "email": "daniel@example.com",
+    "phone": "087 000 0002",
+    "service": "Follow-up Session",
+    "date": "2026-05-21",
+    "time": "14:30",
+    "message": "Would like an afternoon slot if possible.",
+    "status": "Confirmed",
+    "createdAt": "2026-05-17T10:15:00Z"
+  },
+  {
+    "id": "BK-1003",
+    "name": "Sarah Walsh",
+    "email": "sarah@example.com",
+    "phone": "087 000 0003",
+    "service": "Wellness Assessment",
+    "date": "2026-05-22",
+    "time": "12:00",
+    "message": "New client inquiry from website.",
+    "status": "Follow-up",
+    "createdAt": "2026-05-17T11:20:00Z"
+  }
+]

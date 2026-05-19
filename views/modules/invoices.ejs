@@ -1,0 +1,46 @@
+<section class="section">
+  <div class="container">
+    <p class="breadcrumb"><a href="/modules">← Back to modules</a></p>
+
+    <div class="section-heading">
+      <p class="eyebrow">Skeleton module</p>
+      <h1>Invoice Workflow</h1>
+      <p class="lead">
+        A public-safe invoice workflow foundation showing invoice states, detail views
+        and export-oriented operational infrastructure.
+      </p>
+      <div class="actions">
+        <a class="btn" href="/modules/invoices-export.csv">Export invoice CSV</a>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Service</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Due</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% invoices.forEach((invoice) => { %>
+            <tr>
+              <td><%= invoice.id %></td>
+              <td><%= invoice.client %></td>
+              <td><%= invoice.service %></td>
+              <td>€<%= invoice.amount %></td>
+              <td><span class="status-badge"><%= invoice.status %></span></td>
+              <td><%= invoice.due %></td>
+              <td><a href="/modules/invoices/<%= invoice.id %>">View</a></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

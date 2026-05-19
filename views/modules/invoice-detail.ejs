@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container narrow">
+    <p class="breadcrumb"><a href="/modules/invoices">← Back to invoices</a></p>
+
+    <article class="detail-card">
+      <p class="eyebrow">Demo invoice</p>
+      <h1><%= invoice.id %></h1>
+
+      <dl class="detail-list">
+        <div><dt>Client</dt><dd><%= invoice.client %></dd></div>
+        <div><dt>Service</dt><dd><%= invoice.service %></dd></div>
+        <div><dt>Amount</dt><dd>€<%= invoice.amount %></dd></div>
+        <div><dt>Status</dt><dd><%= invoice.status %></dd></div>
+        <div><dt>Issued</dt><dd><%= invoice.issued %></dd></div>
+        <div><dt>Due</dt><dd><%= invoice.due %></dd></div>
+      </dl>
+
+      <p class="helper-note">
+        Demo only. This invoice workflow is a skeleton module for public portfolio use.
+      </p>
+    </article>
+  </div>
+</section>

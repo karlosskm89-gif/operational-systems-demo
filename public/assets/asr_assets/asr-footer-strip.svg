@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="86" viewBox="0 0 1400 86">
+  <rect width="1400" height="86" fill="#d99a25"/>
+  <path d="M0 43 H1400" stroke="#a92820" stroke-width="3" opacity=".65"/>
+  <circle cx="92" cy="43" r="18" fill="#10254b"/>
+  <circle cx="1308" cy="43" r="18" fill="#10254b"/>
+  <text x="700" y="53" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#10254b">Built by ASR Web Services • Practical • Maintainable • Purpose-built</text>
+</svg>

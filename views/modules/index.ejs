@@ -1,0 +1,63 @@
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Operational modules</p>
+      <h1>Module Mode</h1>
+      <p class="lead">
+        Module Mode shows how the operational systems demo can grow beyond booking intake
+        into records, invoice workflows and admin-facing infrastructure.
+      </p>
+    </div>
+
+    <div class="stat-grid">
+      <article class="stat">
+        <strong><%= stats.recordsTotal %></strong>
+        <span>Demo records</span>
+      </article>
+      <article class="stat">
+        <strong><%= stats.recordsActive %></strong>
+        <span>Active records</span>
+      </article>
+      <article class="stat">
+        <strong><%= stats.invoicesTotal %></strong>
+        <span>Demo invoices</span>
+      </article>
+      <article class="stat">
+        <strong><%= stats.invoicesOpen %></strong>
+        <span>Open invoices</span>
+      </article>
+    </div>
+
+    <div class="card-grid module-grid">
+      <article class="card">
+        <p class="eyebrow">Skeleton module</p>
+        <h3>Records Module</h3>
+        <p>
+          Public-safe record list and detail views showing how client/project records
+          could be organised inside an operational system.
+        </p>
+        <a class="btn" href="/modules/records">Open records module</a>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Skeleton module</p>
+        <h3>Invoice Workflow</h3>
+        <p>
+          Demo invoice list, status states, detail view and export route prepared
+          as a foundation for future operational workflow expansion.
+        </p>
+        <a class="btn" href="/modules/invoices">Open invoice workflow</a>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Current complete module</p>
+        <h3>Booking Workflow</h3>
+        <p>
+          The current working module includes public intake, confirmation,
+          admin review, status handling and CSV export.
+        </p>
+        <a class="btn btn-secondary" href="/admin">Open booking admin</a>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" rx="28" fill="#fff9ec"/>
+  <rect x="34" y="34" width="1132" height="352" rx="22" fill="#f7f1e4" stroke="#d99a25" stroke-width="10"/>
+  <path d="M80 306 L250 125 L390 306 L540 170 L700 306 L890 100 L1120 306 V386 H80 Z" fill="#10254b"/>
+  <path d="M80 332 L230 190 L390 332 L535 230 L705 334 L890 168 L1120 332 V386 H80 Z" fill="#a92820" opacity=".88"/>
+  <text x="600" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#10254b">Practical systems for real organisations</text>
+</svg>

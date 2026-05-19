@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><%= typeof title !== "undefined" && title ? title + " | ASR Operational Systems Demo" : "ASR Operational Systems Demo" %></title>
+  <meta name="description" content="Public-safe operational systems demo for booking workflows, records, invoices and admin visibility.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://asr-operational-systems-demo.onrender.com/">
+
+  <meta property="og:site_name" content="ASR Web Services">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' && title ? title + ' | ASR Operational Systems Demo' : 'ASR Operational Systems Demo' %>">
+  <meta property="og:description" content="Public-safe operational systems demo for booking workflows, records, invoices and admin visibility.">
+  <meta property="og:url" content="https://asr-operational-systems-demo.onrender.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://asr-operational-systems-demo.onrender.com/img/asr-og-portfolio-mountain-qr.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' && title ? title + ' | ASR Operational Systems Demo' : 'ASR Operational Systems Demo' %>">
+  <meta name="twitter:description" content="Public-safe operational systems demo for booking workflows, records, invoices and admin visibility.">
+  <meta name="twitter:image" content="https://asr-operational-systems-demo.onrender.com/img/asr-og-portfolio-mountain-qr.jpg">
+  <meta name="twitter:creator" content="@asrweb">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-brand">
+        <a class="brand-link" href="/">
+          <img class="brand-logo" src="/assets/asr_assets/ASR_Logo_Transparent.png" alt="ASR Web Services logo">
+          <span class="brand-text">
+            <span class="brand-name">ASR Web Services</span>
+            <span class="brand-area">Operational Systems Demo</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Systems</a>
+        <a href="/modules">Module Mode</a>
+        <a href="/workflow">Workflow</a>
+        <a href="/faqs">FAQ</a>
+        <a href="/contact">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="header-button" href="/modules">Enter Module Mode</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-strip" aria-hidden="true">
+      <img src="/assets/asr_assets/ASR_letter_foot.PNG" alt="">
+    </div>
+
+    <div class="container footer-inner">
+      <div class="footer-brand-block">
+        <img class="footer-logo" src="/assets/asr_assets/ASR_Logo_Transparent.png" alt="ASR Web Services logo">
+        <div>
+          <strong>ASR Web Services</strong>
+          <p>Practical websites, booking flows, operational workflows, and maintainable digital infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <strong>Demo</strong>
+        <a href="/">Overview</a>
+        <a href="/services">Systems</a>
+        <a href="/modules">Module Mode</a>
+        <a href="/workflow">Workflow</a>
+      </div>
+
+      <div class="footer-links">
+        <strong>Public proof</strong>
+        <span>No real client data</span>
+        <span>Public-safe module demo</span>
+        <span>Portfolio-ready workflow layer</span>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>Built by ASR Web Services • Practical. Maintainable. Purpose-built.</p>
+    </div>
+  </footer>
+</body>
+</html>

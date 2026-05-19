@@ -1,0 +1,29 @@
+[
+  {
+    "id": "REC-1001",
+    "name": "Demo Client A",
+    "type": "Practice enquiry",
+    "owner": "Admin Team",
+    "status": "Active",
+    "lastUpdated": "2026-05-10",
+    "summary": "Public-safe sample record showing how operational notes could be grouped around a client or project."
+  },
+  {
+    "id": "REC-1002",
+    "name": "Demo Client B",
+    "type": "Service request",
+    "owner": "Admin Team",
+    "status": "Follow-up",
+    "lastUpdated": "2026-05-12",
+    "summary": "Example record for demonstrating internal visibility without exposing real client information."
+  },
+  {
+    "id": "REC-1003",
+    "name": "Demo Organisation C",
+    "type": "Operational support",
+    "owner": "Admin Team",
+    "status": "Archived",
+    "lastUpdated": "2026-05-14",
+    "summary": "Archived demo record used to show how future filters and workflow states could be expanded."
+  }
+]
