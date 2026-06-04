@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const bookingsPath = path.join(__dirname, "..", "data", "bookings.json");
+const seedBookingsPath = path.join(__dirname, "..", "data", "bookings.seed.json");
 const servicesPath = path.join(__dirname, "..", "data", "services.json");
 
 function readJson(filePath) {
@@ -43,12 +44,21 @@ function createBooking(payload) {
 }
 
 function updateStatus(id, status) {
+  const allowedStatuses = ["New", "Confirmed", "Follow-up", "Closed"];
+  if (!allowedStatuses.includes(status)) return null;
+
   const bookings = getBookings();
   const booking = bookings.find((item) => item.id === id);
   if (!booking) return null;
   booking.status = status;
   writeJson(bookingsPath, bookings);
   return booking;
+}
+
+function resetDemoBookings() {
+  const seedBookings = readJson(seedBookingsPath);
+  writeJson(bookingsPath, seedBookings);
+  return seedBookings;
 }
 
 function getBookingById(id) {
@@ -70,5 +80,6 @@ module.exports = {
   createBooking,
   updateStatus,
   getBookingById,
+  resetDemoBookings,
   getStats
 };

@@ -28,9 +28,14 @@ router.get("/bookings/:id", (req, res) => {
   });
 });
 
-router.post("/bookings/:id/status", (req, res) => {
+router.post("/bookings/:id/status", (req, res, next) => req.requireCsrf(req, res, next), (req, res) => {
   bookingController.updateStatus(req.params.id, req.body.status);
   res.redirect(`/admin/bookings/${req.params.id}`);
+});
+
+router.post("/reset-demo", (req, res, next) => req.requireCsrf(req, res, next), (req, res) => {
+  bookingController.resetDemoBookings();
+  res.redirect("/admin");
 });
 
 router.get("/export.csv", (req, res) => {

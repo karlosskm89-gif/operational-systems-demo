@@ -35,9 +35,9 @@ Simple operational history for admin-side follow-up.
 This repo should stay believable and focused.
 
 Avoid:
-- fake enterprise complexity
-- unnecessary SaaS-style bloat
+- unnecessary platform complexity
 - overbuilt dashboards
 - unrealistic multi-tenant logic
+- features that distract from the workflow proof
 
-The goal is practical operational proof, not platform theatre.
+The goal is practical operational proof with intentionally scoped modules.

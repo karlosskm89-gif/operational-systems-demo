@@ -1,19 +1,16 @@
 # ASR Visual Alignment
 
-This repo has been aligned with `asr-web-services-starter-kit` so the two public demos feel like one coherent ASR ecosystem.
+The Operational Systems Demo uses the same public ASR visual family as the wider ecosystem while keeping its own operational/workflow focus.
 
-Shared visual assets:
-- `public/assets/asr_assets/ASR_Logo_Transparent.png`
-- `public/assets/asr_assets/ASR_letter_foot.PNG`
-- `public/assets/asr_assets/ASR_logo+mountainsFramed.png`
+Active brand assets:
 
-Shared presentation rules:
-- same red/gold/blue ASR identity
-- same mobile-safe header pattern
-- same footer strip treatment
-- same built-by-ASR footer language
-- same practical/maintainable/purpose-built positioning
+- `public/assets/asr_assets/ASR_Logo_Transparent.webp` — header/footer logo
+- `public/assets/asr_assets/ASR_logo+mountainsFramed.webp` — supporting brand image where used
+- `public/assets/asr_assets/ASR_letter_foot.PNG` — footer strip
+- `public/img/asr-og-portfolio-mountain-qr.jpg` — social preview image
+- `public/favicon.ico` — compact generated favicon for browser tabs
 
-The repos still have different proof jobs:
-- Starter Kit: reusable website/profile architecture.
-- Operational Systems Demo: workflow/admin/module proof.
+The demo should feel related to the main ASR site and Starter Kit demo, not like a disconnected product or fake SaaS platform.
+
+
+Release note: large source PNG logo files are intentionally excluded from the public release package. The runtime uses compressed WebP assets plus the compact favicon.

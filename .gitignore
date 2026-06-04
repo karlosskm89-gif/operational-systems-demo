@@ -22,8 +22,13 @@ Thumbs.db
 # Archives and private working material
 archive/
 *.zip
+*.bak
+*.tmp
 
 # Build/test artefacts
 coverage/
 dist/
 build/
+
+# Private screenshots / local review material
+screenshots/private/

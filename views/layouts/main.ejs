@@ -7,12 +7,12 @@
   <title><%= typeof title !== "undefined" && title ? title + " | ASR Operational Systems Demo" : "ASR Operational Systems Demo" %></title>
   <meta name="description" content="Public-safe operational systems demo for booking workflows, records, invoices and admin visibility.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://asr-operational-systems-demo.onrender.com/">
+  <link rel="canonical" href="<%= canonicalUrl %>">
 
   <meta property="og:site_name" content="ASR Web Services">
   <meta property="og:title" content="<%= typeof title !== 'undefined' && title ? title + ' | ASR Operational Systems Demo' : 'ASR Operational Systems Demo' %>">
   <meta property="og:description" content="Public-safe operational systems demo for booking workflows, records, invoices and admin visibility.">
-  <meta property="og:url" content="https://asr-operational-systems-demo.onrender.com/">
+  <meta property="og:url" content="<%= canonicalUrl %>">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://asr-operational-systems-demo.onrender.com/img/asr-og-portfolio-mountain-qr.jpg">
 
@@ -32,7 +32,7 @@
     <div class="container header-inner">
       <div class="header-brand">
         <a class="brand-link" href="/">
-          <img class="brand-logo" src="/assets/asr_assets/ASR_Logo_Transparent.png" alt="ASR Web Services logo">
+          <img class="brand-logo" src="/assets/asr_assets/ASR_Logo_Transparent.webp" alt="ASR Web Services logo">
           <span class="brand-text">
             <span class="brand-name">ASR Web Services</span>
             <span class="brand-area">Operational Systems Demo</span>
@@ -62,12 +62,12 @@
 
   <footer class="site-footer">
     <div class="footer-strip" aria-hidden="true">
-      <img src="/assets/asr_assets/ASR_letter_foot.PNG" alt="">
+      <img src="/assets/asr_assets/ASR_letter_foot.PNG" alt="" role="presentation" loading="lazy">
     </div>
 
     <div class="container footer-inner">
       <div class="footer-brand-block">
-        <img class="footer-logo" src="/assets/asr_assets/ASR_Logo_Transparent.png" alt="ASR Web Services logo">
+        <img class="footer-logo" src="/assets/asr_assets/ASR_Logo_Transparent.webp" alt="ASR Web Services logo">
         <div>
           <strong>ASR Web Services</strong>
           <p>Practical websites, booking flows, operational workflows, and maintainable digital infrastructure.</p>

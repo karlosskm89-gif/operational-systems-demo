@@ -5,8 +5,15 @@
         <p class="eyebrow">Admin side</p>
         <h1>Booking dashboard</h1>
         <p class="lead">Review incoming requests, filter by status, update operational state, and export workflow data.</p>
+        <p class="demo-notice">Public demo admin — no login required, no real client data. Status changes affect sample data only and can be reset at any time.</p>
       </div>
-      <a class="btn btn-secondary" href="/admin/export.csv">Export CSV</a>
+      <div class="admin-actions">
+        <a class="btn btn-secondary" href="/admin/export.csv">Export CSV</a>
+        <form method="post" action="/admin/reset-demo" class="reset-demo-form">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button class="btn btn-secondary" type="submit">Reset demo data</button>
+        </form>
+      </div>
     </div>
 
     <div class="stats-grid">

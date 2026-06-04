@@ -48,7 +48,7 @@ router.get("/book", (req, res) => {
   });
 });
 
-router.post("/book", (req, res) => {
+router.post("/book", (req, res, next) => req.requireCsrf(req, res, next), (req, res) => {
   const required = ["name", "email", "service", "date", "time"];
   const errors = required
     .filter((field) => !req.body[field])

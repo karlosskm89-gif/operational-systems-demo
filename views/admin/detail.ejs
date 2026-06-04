@@ -1,6 +1,7 @@
 <section class="section">
   <div class="container narrow">
     <a href="/admin">← Back to dashboard</a>
+    <p class="demo-notice">Public demo admin — this is sample data only. Saving a status demonstrates workflow behaviour; it does not contact anyone or change real records.</p>
     <div class="detail-card">
       <p class="eyebrow">Booking detail</p>
       <h1><%= booking.id %></h1>
@@ -20,6 +21,7 @@
       <% } %>
 
       <form method="post" action="/admin/bookings/<%= booking.id %>/status" class="inline-form">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <label>Update status
           <select name="status">
             <% ["New", "Confirmed", "Follow-up", "Closed"].forEach((item) => { %>
@@ -27,7 +29,7 @@
             <% }) %>
           </select>
         </label>
-        <button class="btn" type="submit">Save status</button>
+        <button class="btn" type="submit">Save sample status</button>
       </form>
     </div>
   </div>
