@@ -33,6 +33,10 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/healthz", (req, res) => {
+  res.status(200).json({ status: "ok", service: "asr-operational-systems-demo" });
+});
+
 app.use((req, res, next) => {
   const host = req.get("host") || "localhost:8000";
   const protocol = req.get("x-forwarded-proto") || req.protocol || "http";
