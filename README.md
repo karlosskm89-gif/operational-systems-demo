@@ -1,62 +1,64 @@
 # ASR Operational Systems Demo
 
-Public-safe Express/EJS demo showing the operational layer behind service-business work: intake, admin visibility, status handling, records, invoices and CSV export patterns.
+A public showcase repository demonstrating workflow, administration and reporting concepts commonly found in operational systems.
 
-Live demo: https://asr-operational-systems-demo.onrender.com
+This project shows how an internal workflow layer can sit behind a public-facing website, helping preserve context, improve visibility and reduce administrative friction.
 
 ## What this demonstrates
 
-- Booking/enquiry intake with confirmation state
-- Public demo admin queue, detail view and status workflow
-- Demo reset route for local sample mutations
-- CSV export pattern through `/admin/export.csv`
-- Records and invoice module examples
-- Helmet, rate limiting and CSRF protection on POST actions
-- Compressed public assets and page-specific canonical URLs
+- Booking and enquiry intake
+- Admin review and status handling
+- Records and operational history
+- Invoicing and financial visibility
+- Reporting and CSV export capability
+- Public-safe sample data suitable for portfolio use
 
 ## Ecosystem role
 
-This is Demo Repo 2 in the ASR proof ecosystem. The Starter Kit shows adaptable public website foundations; this repo shows the internal workflow layer that can sit behind them.
+This repository represents **Workflow Proof** within the ASR ecosystem.
 
-## Main routes
+Related proof assets:
 
-```text
-/                   Overview
-/book               Public booking request form
-/confirmation/:id   Confirmation state
-/workflow           Workflow overview
-/about              About this demo
-/services           Operational systems overview
-/faqs               FAQs
-/contact            Contact / next steps
-/modules            Module overview
-/modules/records    Records module
-/modules/invoices   Invoice module
-/admin              Public demo admin dashboard
-/admin/bookings/:id Booking detail
-/admin/export.csv   CSV export
-```
+- ForwardSteps — Operational Proof
+- Aid Cancer Treatment — Relationship Proof
+- Starter Kit — Foundation Proof
+- ASR Website — Marketing Proof
 
-## Local development
+## Live demo
+
+https://asr-operational-systems-demo.onrender.com
+
+## Running locally
 
 ```bash
 npm install
 npm start
-npm test
 ```
 
-Open `http://localhost:8000`.
+Then open:
 
-## Public-safety notes
+```text
+http://localhost:3000
+```
 
-This repo contains sample JSON only. The admin area is intentionally visible as a demo, clearly labelled, and does not contain credentials or real client data. Status changes mutate local sample data only, CSV export is generated from that sample dataset, and the demo can be reset from the dashboard.
+## Main routes
 
-Large source PNG logo files are excluded from the release package; runtime assets use compressed WebP files and a compact generated favicon.
+```text
+/                         Overview
+/book                     Public booking/enquiry flow
+/admin                    Public-safe admin dashboard
+/admin/export.csv         CSV export
+/modules                  Operational modules
+/modules/records          Records and operational history
+/modules/invoices         Invoices and financial visibility
+/workflow                 Workflow explanation
+/healthz                  Health check
+```
 
-## Docs
+## Public-safe boundary
 
-The `docs/` folder contains short supporting notes for ecosystem positioning, workflow structure, module roadmap, visual alignment, browser/social preview checks and screenshots.
+This repo uses fictional/demo data only. It is intended to demonstrate workflow patterns, not expose private client systems.
 
-## Licence
+## Notes
 
-MIT — see `LICENSE`.
+Supporting documentation and historical cleanup notes are stored in `/docs`.

@@ -1,0 +1,59 @@
+<section class="section">
+  <div class="container">
+    <p class="breadcrumb"><a href="/modules">← Back to modules</a></p>
+
+    <div class="section-heading">
+      <p class="eyebrow">Reporting and export capability</p>
+      <h1>Reports & Export Capability</h1>
+      <p class="lead">
+        This page shows how operational data can be summarised and exported so it remains useful
+        outside the system itself.
+      </p>
+    </div>
+
+    <div class="stat-grid">
+      <article class="stat">
+        <strong><%= stats.recordsTotal %></strong>
+        <span>Total records</span>
+      </article>
+      <article class="stat">
+        <strong><%= stats.recordsActive %></strong>
+        <span>Active records</span>
+      </article>
+      <article class="stat">
+        <strong><%= stats.invoicesTotal %></strong>
+        <span>Total invoices</span>
+      </article>
+      <article class="stat">
+        <strong><%= stats.invoicesOpen %></strong>
+        <span>Open invoices</span>
+      </article>
+    </div>
+
+    <div class="card-grid module-grid">
+      <article class="card">
+        <h3>Invoice export</h3>
+        <p>
+          Export invoice data as CSV for finance, reconciliation or wider reporting workflows.
+        </p>
+        <a class="btn" href="/modules/invoices-export.csv">Export invoice CSV</a>
+      </article>
+
+      <article class="card">
+        <h3>Records visibility</h3>
+        <p>
+          Records stay reviewable and structured, helping preserve operational history over time.
+        </p>
+        <a class="btn btn-secondary" href="/modules/records">View records</a>
+      </article>
+
+      <article class="card">
+        <h3>Workflow context</h3>
+        <p>
+          Reporting becomes more useful when bookings, records and invoices are treated as connected work rather than isolated screens.
+        </p>
+        <a class="btn btn-secondary" href="/workflow">View workflow overview</a>
+      </article>
+    </div>
+  </div>
+</section>

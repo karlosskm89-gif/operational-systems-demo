@@ -43,6 +43,20 @@ router.get("/invoices/:id", (req, res) => {
   });
 });
 
+
+router.get("/workflow", (req, res) => {
+  res.redirect("/workflow");
+});
+
+router.get("/reports", (req, res) => {
+  res.render("modules/reports", {
+    title: "Reports & Export Capability",
+    stats: operationalController.getModuleStats(),
+    invoices: operationalController.getInvoices(),
+    records: operationalController.getRecords()
+  });
+});
+
 router.get("/invoices-export.csv", (req, res) => {
   const rows = operationalController.getInvoices();
   const header = ["id", "client", "service", "amount", "status", "issued", "due"];

@@ -1,13 +1,14 @@
 # Operational Systems Demo Documentation
 
-This folder contains reviewer/developer notes for the ASR Operational Systems Demo.
+Supporting documentation for the ASR Operational Systems Demo.
 
-Recommended reading:
+## Current documents
 
-- `ecosystem-positioning.md` — how this repo fits beside the main ASR site and Starter Kit demo
-- `workflow.md` — booking/admin/status workflow notes
-- `module-roadmap.md` — intended scope of the records and invoice modules
-- `asr-visual-alignment.md` — shared visual identity notes
-- `browser-social-preview-notes.md` — favicon/social preview notes
-- `screenshot-guide.md` — optional screenshot capture guidance
-- `/admin/export.csv` — public-safe CSV export route for sample booking data
+- `ecosystem-positioning.md` — how the repo fits into the wider ASR proof system
+- `workflow.md` — workflow behaviour and data-flow notes
+- `screenshot-guide.md` — suggested screenshots for portfolio use
+- `history/` — archived roadmap, checkpoints and earlier readiness notes
+
+## Repo role
+
+The Operational Systems Demo is the ASR **Workflow Proof** asset. It demonstrates workflow visibility, record keeping, reporting, exports and reduced administrative friction.
