@@ -54,22 +54,36 @@ http://localhost:3000
 /workflow                 Workflow explanation
 /healthz                  Health check
 ```
+
 ## Screenshots
 
+### Home Desktop
+
+![Home Desktop](screenshots/operational-demo-hompage-hero-desktop.png)
+
 ### Dashboard Overview
-![Dashboard](screenshots/dashboard-overview.png)
 
-### Booking Workflow
-![Booking Workflow](screenshots/booking-workflow.png)
+![Dashboard](screenshots/operational-demo-booking-dashboard-desktop.png)
 
-### Records Management
-![Records](screenshots/records-management.png)
+### Booking Details
 
-### Invoice Visibility
-![Invoices](screenshots/invoice-visibility.png)
+![Booking Details](screenshots/operational-demo-booking-details-desktop.png)
+
+### Booking Form
+
+![Booking Form](screenshots/operational-demo-booking-form-desktop.png)
+
+### Reports Management
+
+![Reports](screenshots/operational-demo-reports-dashboard-desktop.png)
+
+### Home Mobile
+
+![Home Mobile](screenshots/operational-demo-hompage-hero-mobile.png)
 
 ### Workflow Documentation
-![Workflow](screenshots/workflow-diagram.png)
+
+![Workflow](screenshots/operational-demo-workflow-desktop.png)
 
 ## Workflow Overview
 
@@ -119,7 +133,6 @@ views/
 
 The design separates workflow logic, presentation and reporting concerns to keep the system maintainable as operational requirements grow.
 
-  
 ## Public-safe boundary
 
 This repo uses fictional/demo data only. It is intended to demonstrate workflow patterns, not expose private client systems.
