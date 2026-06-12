@@ -1,6 +1,6 @@
-# ASR Operational Systems Demo
+# ASR ASR Operational Systems Demo
 
-A public showcase repository demonstrating workflow, administration and reporting concepts commonly found in operational systems.
+A public-safe ASR proof repository demonstrating workflow, administration, records, reports and export-ready operational systems.
 
 This project shows how an internal workflow layer can sit behind a public-facing website, helping preserve context, improve visibility and reduce administrative friction.
 

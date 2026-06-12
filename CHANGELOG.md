@@ -1,12 +1,12 @@
 # Changelog
 
-## 1.4.0 — ASR base layer and Module Mode
+## 1.4.0 — ASR base layer and Operational Modules
 
 - Added ASR base pages: About, Systems, FAQs and Contact/Next Steps
 - Reframed homepage as the ASR operational systems hub
-- Reframed `/modules` as Module Mode, parallel to Starter Kit Showcase Mode
+- Reframed `/modules` as Operational Modules, parallel to Starter Kit Showcase Mode
 - Updated navigation and footer to separate ASR base from demo modules
-- Preserved Booking, Records and Invoice modules inside Module Mode
+- Preserved Booking, Records and Invoice modules inside Operational Modules
 - Updated README to explain the Repo 1 / Repo 2 parallel architecture
 
 ## 1.3.0 — Skeleton operational modules

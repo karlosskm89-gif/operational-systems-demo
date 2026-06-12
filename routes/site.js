@@ -10,23 +10,11 @@ router.get("/", (req, res) => {
 });
 
 
-router.get("/about", (req, res) => {
-  res.render("about", {
-    title: "About This Demo"
-  });
-});
+router.get("/about", (req, res) => res.redirect(301, "/workflow"));
 
-router.get("/services", (req, res) => {
-  res.render("services", {
-    title: "Operational Systems"
-  });
-});
+router.get("/services", (req, res) => res.redirect(301, "/modules"));
 
-router.get("/faqs", (req, res) => {
-  res.render("faqs", {
-    title: "FAQs"
-  });
-});
+router.get("/faqs", (req, res) => res.redirect(301, "/workflow"));
 
 router.get("/contact", (req, res) => {
   res.render("contact", {

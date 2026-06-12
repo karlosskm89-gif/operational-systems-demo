@@ -1,3 +1,9 @@
+# Image Optimisation Note — v13
+
+Large legacy PNG assets were removed from the deployable package where smaller WebP/runtime equivalents exist. Legacy filenames below are historical optimisation references, not current runtime assets.
+
+---
+
 # Image Optimisation Report
 
 Source ZIP: `operational-demo-visual-polish-v1.zip`
