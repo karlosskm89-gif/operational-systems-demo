@@ -54,7 +54,72 @@ http://localhost:3000
 /workflow                 Workflow explanation
 /healthz                  Health check
 ```
+## Screenshots
 
+### Dashboard Overview
+![Dashboard](screenshots/dashboard-overview.png)
+
+### Booking Workflow
+![Booking Workflow](screenshots/booking-workflow.png)
+
+### Records Management
+![Records](screenshots/records-management.png)
+
+### Invoice Visibility
+![Invoices](screenshots/invoice-visibility.png)
+
+### Workflow Documentation
+![Workflow](screenshots/workflow-diagram.png)
+
+## Workflow Overview
+
+This demonstration models a common service-business workflow:
+
+Enquiry →
+Booking →
+Admin Review →
+Operational Record →
+Invoice →
+Reporting
+
+The objective is to show how operational visibility can reduce administrative friction while improving consistency and record keeping.
+
+## Admin Visibility
+
+The demo includes a public-safe administration area designed to illustrate:
+
+- Booking review
+- Status management
+- Record history
+- Invoice tracking
+- Operational reporting
+- CSV export capability
+
+No real client information is included.
+All data is fictional and intended for demonstration purposes only.
+
+## Technology
+
+- Node.js
+- Express
+- EJS
+- HTML
+- CSS
+- JavaScript
+
+## Architecture
+
+This project follows a modular Express/EJS structure:
+
+controllers/
+data/
+public/
+routes/
+views/
+
+The design separates workflow logic, presentation and reporting concerns to keep the system maintainable as operational requirements grow.
+
+  
 ## Public-safe boundary
 
 This repo uses fictional/demo data only. It is intended to demonstrate workflow patterns, not expose private client systems.
