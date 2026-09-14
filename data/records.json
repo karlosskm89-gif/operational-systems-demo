@@ -1,29 +1,42 @@
 [
   {
     "id": "REC-1001",
-    "name": "Demo Client A",
-    "type": "Practice enquiry",
+    "name": "Example Consultancy Client",
+    "type": "Appointment record",
     "owner": "Admin Team",
     "status": "Active",
-    "lastUpdated": "2026-05-10",
-    "summary": "Public-safe sample record showing how operational notes could be grouped around a client or project."
+    "lastUpdated": "2026-09-10",
+    "sourceBookingId": "BK-1001",
+    "summary": "A fictional operational record showing how an appointment request can carry context forward after the public booking step."
   },
   {
     "id": "REC-1002",
-    "name": "Demo Client B",
-    "type": "Service request",
-    "owner": "Admin Team",
+    "name": "Example Community Group",
+    "type": "Group visit record",
+    "owner": "Visitor Team",
     "status": "Follow-up",
-    "lastUpdated": "2026-05-12",
-    "summary": "Example record for demonstrating internal visibility without exposing real client information."
+    "lastUpdated": "2026-09-11",
+    "sourceBookingId": "BK-1003",
+    "summary": "A public-safe group record showing how attendance, visit context and follow-up can sit beside the original request."
   },
   {
     "id": "REC-1003",
-    "name": "Demo Organisation C",
-    "type": "Operational support",
+    "name": "Example Weekly Class",
+    "type": "Recurring resource record",
+    "owner": "Facilities Team",
+    "status": "Active",
+    "lastUpdated": "2026-09-12",
+    "sourceBookingId": "BK-1004",
+    "summary": "A recurring-use record demonstrating how a repeated room or resource arrangement can become part of ongoing operational history."
+  },
+  {
+    "id": "REC-1004",
+    "name": "Example Room Hire",
+    "type": "Venue hire record",
     "owner": "Admin Team",
     "status": "Archived",
-    "lastUpdated": "2026-05-14",
-    "summary": "Archived demo record used to show how future filters and workflow states could be expanded."
+    "lastUpdated": "2026-09-08",
+    "sourceBookingId": "BK-1002",
+    "summary": "An archived venue record included to show that the same operational layer can retain history after a booking has been completed."
   }
 ]

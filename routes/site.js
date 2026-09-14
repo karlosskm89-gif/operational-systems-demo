@@ -5,15 +5,12 @@ const bookingController = require("../controllers/bookingController");
 router.get("/", (req, res) => {
   res.render("home", {
     title: "Operational Systems Demo",
-    services: bookingController.getServices()
+    bookingTypes: bookingController.getBookingTypes()
   });
 });
 
-
 router.get("/about", (req, res) => res.redirect(301, "/workflow"));
-
 router.get("/services", (req, res) => res.redirect(301, "/modules"));
-
 router.get("/faqs", (req, res) => res.redirect(301, "/workflow"));
 
 router.get("/contact", (req, res) => {
@@ -26,26 +23,40 @@ router.get("/module-mode", (req, res) => {
   res.redirect("/modules");
 });
 
-
 router.get("/book", (req, res) => {
-  res.render("book", {
-    title: "Request a Booking",
+  const selectedType = req.query.type ? bookingController.getBookingType(req.query.type) : null;
+
+  if (req.query.type && !selectedType) return res.redirect("/book");
+
+  if (!selectedType) {
+    return res.render("book", {
+      title: "Booking & Enquiry Workflow",
+      bookingTypes: bookingController.getBookingTypes()
+    });
+  }
+
+  return res.render("booking-form", {
+    title: selectedType.label,
+    selectedType,
+    bookingTypes: bookingController.getBookingTypes(),
     services: bookingController.getServices(),
+    options: bookingController.getOptions(),
     errors: [],
-    form: {}
+    form: { bookingType: selectedType.value }
   });
 });
 
 router.post("/book", (req, res, next) => req.requireCsrf(req, res, next), (req, res) => {
-  const required = ["name", "email", "service", "date", "time"];
-  const errors = required
-    .filter((field) => !req.body[field])
-    .map((field) => `${field} is required`);
+  const selectedType = bookingController.getBookingType(req.body.bookingType);
+  const errors = bookingController.validateBookingPayload(req.body);
 
-  if (errors.length) {
-    return res.status(400).render("book", {
-      title: "Request a Booking",
+  if (!selectedType || errors.length) {
+    return res.status(400).render("booking-form", {
+      title: selectedType?.label || "Booking & Enquiry Workflow",
+      selectedType: selectedType || bookingController.getBookingTypes()[0],
+      bookingTypes: bookingController.getBookingTypes(),
       services: bookingController.getServices(),
+      options: bookingController.getOptions(),
       errors,
       form: req.body
     });
@@ -60,17 +71,18 @@ router.get("/confirmation/:id", (req, res) => {
   if (!booking) return res.status(404).render("not-found", { title: "Not Found" });
 
   res.render("confirmation", {
-    title: "Booking Request Received",
-    booking
+    title: "Request Received",
+    booking: bookingController.toViewModel(booking)
   });
 });
 
 router.get("/workflow", (req, res) => {
+  const bookings = bookingController.getBookings();
   res.render("workflow", {
     title: "Workflow Overview",
-    services: bookingController.getServices(),
-    bookings: bookingController.getBookings(),
-    stats: bookingController.getStats()
+    bookingTypes: bookingController.getBookingTypes(),
+    bookings: bookings.map(bookingController.toViewModel),
+    stats: bookingController.getStats(bookings)
   });
 });
 

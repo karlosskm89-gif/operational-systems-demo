@@ -2,87 +2,111 @@
   <div class="container hero-grid">
     <div>
       <p class="eyebrow">ASR operational systems layer</p>
-      <h1>Operational workflows for service businesses that need more than a contact form</h1>
+      <h1>Different requests in. One clear operational workflow behind them.</h1>
       <p class="lead">
-        This public-safe proof asset shows the operational layer ASR can build behind a website:
-        intake, admin visibility, workflow states, records, invoices and export-ready data.
+        This public-safe proof asset shows how ASR can turn appointments, room bookings, group visits and recurring requests into structured admin work — with records, status handling, reporting and export-ready data behind the public website.
       </p>
       <div class="badge-row">
-        <span>Operational clarity</span>
-        <span>Admin workflows</span>
-        <span>Public-safe demos</span>
-        <span>Maintainable structure</span>
+        <span>Flexible intake</span>
+        <span>Shared admin queue</span>
+        <span>Availability logic</span>
+        <span>Export-ready data</span>
       </div>
       <div class="actions">
-        <a class="btn" href="/modules">Open operational modules</a>
-        <a class="btn btn-secondary" href="https://asrweb.ie/portfolio" target="_blank" rel="noopener">Back to ASR portfolio</a>
+        <a class="btn" href="/book">Try the booking workflows</a>
+        <a class="btn btn-secondary" href="/admin">Open shared admin</a>
       </div>
     </div>
 
     <div class="hero-card brand-card">
       <img class="asr-card-logo" src="/assets/asr_assets/ASR_Logo_Transparent.webp" alt="ASR Web Services">
-      <h2>ASR base layer</h2>
+      <h2>One reusable operational layer</h2>
       <p>
-        The website is only the front door. Operational Modules shows how ASR can add calm internal workflows underneath it without making the system messy or overbuilt.
+        The public form can change to suit the work. The operational principle stays the same: capture the right context, make it visible to staff, then move it through a manageable workflow.
       </p>
     </div>
   </div>
 </section>
 
 <section class="section section-soft">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Booking & enquiry patterns</p>
+      <h2>One system can start in several different ways</h2>
+      <p>
+        The demo no longer assumes every organisation works like an appointment-led service business. Choose the intake pattern that most closely resembles the work you need to organise.
+      </p>
+    </div>
+
+    <div class="booking-type-grid compact-type-grid">
+      <% bookingTypes.forEach((type) => { %>
+        <article class="booking-type-card">
+          <span class="booking-type-kicker"><%= type.shortLabel %></span>
+          <h3><%= type.label %></h3>
+          <p><%= type.summary %></p>
+          <a class="text-link" href="/book?type=<%= encodeURIComponent(type.value) %>">Try this flow →</a>
+        </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container workflow-grid">
     <article>
-      <p class="eyebrow">The business problem</p>
-      <h2>Websites often collect enquiries. Systems help organisations handle them.</h2>
+      <p class="eyebrow">The operational problem</p>
+      <h2>A form submission is only useful if the organisation can handle what happens next.</h2>
       <p>
-        A form submission is only the beginning. The useful work happens when that request
-        becomes visible, trackable, exportable and manageable inside a calm admin workflow.
+        The same underlying workflow can support very different public requests while keeping the internal process calm, visible and consistent.
       </p>
       <ul class="check-list">
-        <li>Public intake becomes a structured record</li>
-        <li>Admin users can review and update workflow state</li>
-        <li>Records and invoices can sit beside booking workflows</li>
-        <li>Exports make operational data portable</li>
+        <li>Different public flows become structured requests</li>
+        <li>Venue and recurring requests can be checked for sample clashes</li>
+        <li>Staff can review everything in one queue and update workflow state</li>
+        <li>Records, invoices and reporting can sit downstream where appropriate</li>
       </ul>
+      <div class="actions">
+        <a class="btn" href="/workflow">See how the pieces connect</a>
+      </div>
     </article>
 
     <article class="note-card workflow-visual-card">
       <img src="/assets/booking-flow.svg" alt="Operational workflow illustration">
-      <h3>Public-safe proof</h3>
+      <h3>Public-safe proof, adaptable logic</h3>
       <p>
-        The modules use sample data only, but the pattern is real: structured intake, reviewable records and export-ready information.
+        Everything here is fictional demo data. The value is the pattern: intake rules can change around an organisation without forcing every client into the same off-the-shelf process.
       </p>
     </article>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-soft">
   <div class="container">
     <div class="section-heading">
       <p class="eyebrow">Operational Modules</p>
-      <h2>Explore the operational demo modules</h2>
+      <h2>Follow the work beyond the booking form</h2>
       <p>
-        Use Operational Modules to inspect the kind of behind-the-scenes workflow a service business can grow into after the first website is live.
+        Booking is the live entry point, but the wider proof asset also shows records, financial visibility and reporting patterns that can sit behind the same website.
       </p>
     </div>
 
     <div class="card-grid module-grid">
       <article class="card">
-        <h3>Booking Workflow</h3>
-        <p>Public intake, confirmation, admin review, status handling and CSV export.</p>
-        <a class="btn" href="/book">Try booking module</a>
+        <h3>Booking & Enquiry Workflow</h3>
+        <p>Four public intake patterns feeding one shared admin queue, with status handling, clash checks and CSV export.</p>
+        <a class="btn" href="/book">Try booking workflows</a>
       </article>
 
       <article class="card">
         <h3>Records Module</h3>
-        <p>Public-safe record list and detail views for future client/project workflows.</p>
+        <p>Public-safe operational records showing how context can carry forward after the initial request.</p>
         <a class="btn btn-secondary" href="/modules/records">View records</a>
       </article>
 
       <article class="card">
-        <h3>Invoice Workflow</h3>
-        <p>Invoice states, detail views and export-ready operational data.</p>
-        <a class="btn btn-secondary" href="/modules/invoices">View invoices</a>
+        <h3>Invoices & Reporting</h3>
+        <p>Financial states, summary metrics and export routes that demonstrate downstream operational visibility.</p>
+        <a class="btn btn-secondary" href="/modules/reports">View reports</a>
       </article>
     </div>
   </div>
@@ -91,13 +115,13 @@
 <section class="section contact-band">
   <div class="container contact-band-grid">
     <div>
-      <p class="eyebrow">Same ASR ecosystem</p>
-      <h2>One side sells clearly. The other side helps the work get handled.</h2>
+      <p class="eyebrow">Purpose-built, not one-size-fits-all</p>
+      <h2>The demo proves building blocks. Discovery determines the real rules.</h2>
       <p>
-        Together, the starter kit and operational demo show the two sides of ASR’s work: clear public pages and practical internal systems.
+        Payments, deposits, notifications, approval rules, user roles and deeper integrations are intentionally not assumed here. A real implementation would be shaped around the organisation’s actual process.
       </p>
-      <a class="btn" href="/modules">Open operational modules</a>
-      <a class="btn btn-secondary" href="https://asr-web-services-starter-kit.onrender.com/" target="_blank" rel="noopener noreferrer">View Starter Kit Demo</a>
+      <a class="btn" href="/book">Explore the intake flows</a>
+      <a class="btn btn-secondary" href="https://asrweb.ie/portfolio" target="_blank" rel="noopener">Back to ASR portfolio</a>
     </div>
     <img src="/assets/asr_assets/ASR_logo+mountainsFramed.webp" alt="ASR Web Services mountain framed artwork">
   </div>

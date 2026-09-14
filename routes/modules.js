@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const operationalController = require("../controllers/operationalController");
+const bookingController = require("../controllers/bookingController");
 
 router.get("/", (req, res) => {
   res.render("modules/index", {
     title: "Operational Modules",
-    stats: operationalController.getModuleStats()
+    stats: operationalController.getModuleStats(),
+    bookingStats: bookingController.getStats()
   });
 });
 
@@ -43,15 +45,21 @@ router.get("/invoices/:id", (req, res) => {
   });
 });
 
-
 router.get("/workflow", (req, res) => {
   res.redirect("/workflow");
 });
 
 router.get("/reports", (req, res) => {
+  const bookings = bookingController.getBookings();
   res.render("modules/reports", {
     title: "Reports & Export Capability",
     stats: operationalController.getModuleStats(),
+    bookingStats: bookingController.getStats(bookings),
+    bookingTypes: bookingController.getBookingTypes(),
+    typeBreakdown: bookingController.getBookingTypes().map((type) => ({
+      ...type,
+      count: bookings.filter((booking) => booking.bookingType === type.value).length
+    })),
     invoices: operationalController.getInvoices(),
     records: operationalController.getRecords()
   });
@@ -59,7 +67,7 @@ router.get("/reports", (req, res) => {
 
 router.get("/invoices-export.csv", (req, res) => {
   const rows = operationalController.getInvoices();
-  const header = ["id", "client", "service", "amount", "status", "issued", "due"];
+  const header = ["id", "client", "service", "amount", "status", "issued", "due", "sourceRecordId"];
   const csv = [
     header.join(","),
     ...rows.map((row) => header.map((field) => `"${String(row[field] || "").replaceAll('"', '""')}"`).join(","))

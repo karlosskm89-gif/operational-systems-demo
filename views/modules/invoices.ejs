@@ -3,26 +3,26 @@
     <p class="breadcrumb"><a href="/modules">← Back to modules</a></p>
 
     <div class="section-heading">
-      <p class="eyebrow">Skeleton module</p>
+      <p class="eyebrow">Financial visibility</p>
       <h1>Invoice Workflow</h1>
       <p class="lead">
-        A public-safe invoice workflow foundation showing invoice states, detail views
-        and export-oriented operational infrastructure.
+        A public-safe invoice workflow showing how financial states can sit downstream of operational records when the real process needs them.
       </p>
       <div class="actions">
         <a class="btn" href="/modules/invoices-export.csv">Export invoice CSV</a>
       </div>
     </div>
 
-    <div class="table-card">
+    <div class="table-card table-scroll">
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>Client</th>
-            <th>Service</th>
+            <th>Client / account</th>
+            <th>Service / use</th>
             <th>Amount</th>
             <th>Status</th>
+            <th>Source record</th>
             <th>Due</th>
             <th></th>
           </tr>
@@ -35,10 +35,11 @@
               <td><%= invoice.service %></td>
               <td>€<%= invoice.amount %></td>
               <td><span class="status-badge"><%= invoice.status %></span></td>
+              <td><%= invoice.sourceRecordId || '—' %></td>
               <td><%= invoice.due %></td>
               <td><a href="/modules/invoices/<%= invoice.id %>">View</a></td>
             </tr>
-          <% }) %>
+          <% }); %>
         </tbody>
       </table>
     </div>

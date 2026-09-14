@@ -3,7 +3,7 @@
     <p class="breadcrumb"><a href="/modules/records">← Back to records</a></p>
 
     <article class="detail-card">
-      <p class="eyebrow">Demo record</p>
+      <p class="eyebrow">Demo operational record</p>
       <h1><%= record.name %></h1>
 
       <dl class="detail-list">
@@ -11,14 +11,21 @@
         <div><dt>Type</dt><dd><%= record.type %></dd></div>
         <div><dt>Owner</dt><dd><%= record.owner %></dd></div>
         <div><dt>Status</dt><dd><%= record.status %></dd></div>
+        <div><dt>Source request</dt><dd><%= record.sourceBookingId || 'Not linked in sample data' %></dd></div>
         <div><dt>Last updated</dt><dd><%= record.lastUpdated %></dd></div>
       </dl>
 
       <h2>Summary</h2>
       <p><%= record.summary %></p>
 
+      <% if (record.sourceBookingId) { %>
+        <div class="actions">
+          <a class="btn btn-secondary" href="/admin/bookings/<%= record.sourceBookingId %>">View source request</a>
+        </div>
+      <% } %>
+
       <p class="helper-note">
-        Demo only. This page shows structure and workflow thinking, not real client data.
+        Demo only. This page illustrates how booking context can carry forward into internal records; it is not real client information.
       </p>
     </article>
   </div>

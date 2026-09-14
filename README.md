@@ -1,17 +1,30 @@
-# ASR ASR Operational Systems Demo
+# ASR Operational Systems Demo
 
-A public-safe ASR proof repository demonstrating workflow, administration, records, reports and export-ready operational systems.
+A public-safe ASR proof repository demonstrating flexible intake, shared administration, operational records, invoice visibility, reporting and export-ready workflows.
 
-This project shows how an internal workflow layer can sit behind a public-facing website, helping preserve context, improve visibility and reduce administrative friction.
+This project shows how an operational layer can sit behind a public-facing website. The public questions can change around the job while staff still receive structured, reviewable work inside one coherent admin system.
 
 ## What this demonstrates
 
-- Booking and enquiry intake
-- Admin review and status handling
-- Records and operational history
-- Invoicing and financial visibility
+- Four reusable booking/enquiry intake patterns
+  - Appointment / Service
+  - Venue / Resource
+  - Group / Visit
+  - Recurring Booking
+- One shared admin queue for all request types
+- Resource/time overlap checks for venue and recurring requests
+- Bounded recurring-date generation for demonstration purposes
+- Operational status handling and type/status filtering
+- Records that can preserve context after intake
+- Invoicing and financial visibility as an optional downstream layer
 - Reporting and CSV export capability
-- Public-safe sample data suitable for portfolio use
+- Public-safe fictional data suitable for portfolio and sales conversations
+
+## Core design principle
+
+**Different operational inputs → one manageable workflow → records → financial/admin visibility → reporting**
+
+The demo is intentionally not presented as an off-the-shelf booking product. It proves reusable building blocks and workflow thinking. Real implementations should be shaped around the organisation's actual rules instead of assuming payments, deposits, notifications, approval logic or integrations before discovery.
 
 ## Ecosystem role
 
@@ -38,79 +51,80 @@ npm start
 Then open:
 
 ```text
-http://localhost:3000
+http://localhost:8000
 ```
 
 ## Main routes
 
 ```text
 /                         Overview
-/book                     Public booking/enquiry flow
-/admin                    Public-safe admin dashboard
-/admin/export.csv         CSV export
+/book                     Booking/enquiry pattern chooser
+/book?type=appointment    Appointment / Service flow
+/book?type=venue          Venue / Resource flow
+/book?type=group          Group / Visit flow
+/book?type=recurring      Recurring Booking flow
+/admin                    Shared public-safe admin queue
+/admin/export.csv         Booking/enquiry CSV export
 /modules                  Operational modules
 /modules/records          Records and operational history
 /modules/invoices         Invoices and financial visibility
+/modules/reports          Reporting and export capability
 /workflow                 Workflow explanation
 /healthz                  Health check
 ```
 
-## Screenshots
+## Booking and enquiry architecture
 
-### Home Desktop
+The four public flows are deliberately different at intake but converge into the same booking/enquiry record model and admin workflow.
 
-![Home Desktop](screenshots/operational-demo-hompage-hero-desktop.png)
+### Appointment / Service
 
-### Dashboard Overview
+Captures a familiar service, date and time request. This preserves the original appointment-led use case without making it the conceptual centre of the whole demo.
 
-![Dashboard](screenshots/operational-demo-booking-dashboard-desktop.png)
+### Venue / Resource
 
-### Booking Details
+Captures a room/resource, date, start/end times, attendee count and practical requirements. The demo checks the request against existing sample venue/recurring bookings for the same resource and overlapping time.
 
-![Booking Details](screenshots/operational-demo-booking-details-desktop.png)
+### Group / Visit
 
-### Booking Form
+Captures group type, preferred date/time window, group size and practical requirements. This flow intentionally remains staff-review-led instead of pretending every organised visit should be auto-confirmed.
 
-![Booking Form](screenshots/operational-demo-booking-form-desktop.png)
+### Recurring Booking
 
-### Reports Management
+Captures an activity, resource, first date, time range, recurrence pattern and bounded series length. The demo checks the generated sample dates for resource clashes. It is intentionally limited to 4/6/8/12 occurrences rather than attempting to reproduce a full calendar recurrence engine.
 
-![Reports](screenshots/operational-demo-reports-dashboard-desktop.png)
+## Shared admin workflow
 
-### Home Mobile
+All request types appear in one admin queue with:
 
-![Home Mobile](screenshots/operational-demo-hompage-hero-mobile.png)
+- type and status filters
+- readable request/schedule summaries
+- review/availability state
+- potential conflict references
+- workflow status updates
+- CSV export
+- resettable public-safe sample data
 
-### Workflow Documentation
+Supported workflow statuses:
 
-![Workflow](screenshots/operational-demo-workflow-desktop.png)
+```text
+New
+Availability checked
+Confirmed
+Follow-up
+Completed
+Cancelled
+```
 
-## Workflow Overview
+## Downstream modules
 
-This demonstration models a common service-business workflow:
+Records and invoices are still lightweight proof modules, but the sample data now demonstrates a clearer relationship between intake, operational history and financial visibility using `sourceBookingId` and `sourceRecordId` references.
 
-Enquiry →
-Booking →
-Admin Review →
-Operational Record →
-Invoice →
-Reporting
+## Public-safe boundary
 
-The objective is to show how operational visibility can reduce administrative friction while improving consistency and record keeping.
+No real client information is included. All names, organisations, bookings, records and invoices are fictional demonstration data.
 
-## Admin Visibility
-
-The demo includes a public-safe administration area designed to illustrate:
-
-- Booking review
-- Status management
-- Record history
-- Invoice tracking
-- Operational reporting
-- CSV export capability
-
-No real client information is included.
-All data is fictional and intended for demonstration purposes only.
+The public admin is intentionally unauthenticated because it contains only resettable sample information. Production systems would use appropriate authentication, authorisation, persistence, audit and data-protection controls.
 
 ## Technology
 
@@ -120,22 +134,27 @@ All data is fictional and intended for demonstration purposes only.
 - HTML
 - CSS
 - JavaScript
+- JSON demo persistence
 
 ## Architecture
 
-This project follows a modular Express/EJS structure:
-
+```text
 controllers/
 data/
 public/
 routes/
 views/
+```
 
-The design separates workflow logic, presentation and reporting concerns to keep the system maintainable as operational requirements grow.
+Booking rules are centralised in `controllers/bookingController.js`, while configurable labels/options live in `data/booking-options.json`.
 
-## Public-safe boundary
+## Tests
 
-This repo uses fictional/demo data only. It is intended to demonstrate workflow patterns, not expose private client systems.
+```bash
+npm test
+```
+
+The test suite covers the four intake types, venue overlap checking, recurring-date generation, validation, status handling and the downstream record/invoice proof modules.
 
 ## Notes
 

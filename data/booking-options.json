@@ -1,0 +1,72 @@
+{
+  "types": [
+    {
+      "value": "appointment",
+      "label": "Appointment / Service",
+      "shortLabel": "Appointment",
+      "summary": "A person chooses a service, date and time for a one-to-one or scheduled appointment.",
+      "bestFor": "Clinics, consultants and appointment-led services"
+    },
+    {
+      "value": "venue",
+      "label": "Venue / Resource",
+      "shortLabel": "Venue / Resource",
+      "summary": "A room, hall or shared resource is requested for a defined start and end time, with clash checking.",
+      "bestFor": "Community spaces, venues, facilities and shared resources"
+    },
+    {
+      "value": "group",
+      "label": "Group / Visit",
+      "shortLabel": "Group / Visit",
+      "summary": "A group requests a visit or organised activity that needs staff review before it can be confirmed.",
+      "bestFor": "Visitor attractions, charities, education and community organisations"
+    },
+    {
+      "value": "recurring",
+      "label": "Recurring Booking",
+      "shortLabel": "Recurring",
+      "summary": "A repeated activity requests the same resource and time pattern across a bounded series of dates.",
+      "bestFor": "Classes, clubs, regular room users and recurring activities"
+    }
+  ],
+  "resources": [
+    "Meeting Room",
+    "Studio / Activity Room",
+    "Hall / Event Space"
+  ],
+  "groupTypes": [
+    "Community group",
+    "School / education group",
+    "Tour / organised visit",
+    "Club / society",
+    "Other group"
+  ],
+  "timeWindows": [
+    "Morning",
+    "Afternoon",
+    "Evening",
+    "Flexible"
+  ],
+  "requirements": [
+    "Accessible setup",
+    "Projector / screen",
+    "Catering / refreshments",
+    "Flexible seating",
+    "Additional setup time"
+  ],
+  "recurrencePatterns": [
+    {
+      "value": "weekly",
+      "label": "Weekly"
+    },
+    {
+      "value": "fortnightly",
+      "label": "Fortnightly"
+    },
+    {
+      "value": "monthly",
+      "label": "Monthly"
+    }
+  ],
+  "recurrenceCounts": [4, 6, 8, 12]
+}

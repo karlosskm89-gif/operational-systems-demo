@@ -1,7 +1,7 @@
 {
   "name": "asr-operational-systems-demo",
-  "version": "1.0.0",
-  "description": "A public-safe ASR operational systems demo for bookings, admin workflows, status handling and export-oriented infrastructure.",
+  "version": "2.0.0",
+  "description": "A public-safe ASR operational systems demo showing flexible booking and enquiry intake, shared admin workflows, resource conflict checks, records, invoices and reporting.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -23,7 +23,12 @@
     "portfolio",
     "service-business",
     "workflow",
-    "workflow-demo"
+    "workflow-demo",
+    "resource-booking",
+    "venue-booking",
+    "recurring-bookings",
+    "group-visits",
+    "availability-checking"
   ],
   "author": "ASR Web Services",
   "license": "MIT",

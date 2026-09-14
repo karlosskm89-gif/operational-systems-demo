@@ -3,21 +3,21 @@
     <p class="breadcrumb"><a href="/modules">← Back to modules</a></p>
 
     <div class="section-heading">
-      <p class="eyebrow">Skeleton module</p>
+      <p class="eyebrow">Operational history</p>
       <h1>Records Module</h1>
       <p class="lead">
-        A public-safe record listing showing how future client, project or case records
-        could be structured in an ASR-style operational system.
+        Fictional records show how context from different kinds of accepted work can carry forward into an operational history rather than disappearing into an inbox.
       </p>
     </div>
 
-    <div class="table-card">
+    <div class="table-card table-scroll">
       <table>
         <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Type</th>
+            <th>Source request</th>
             <th>Status</th>
             <th>Updated</th>
             <th></th>
@@ -29,11 +29,12 @@
               <td><%= record.id %></td>
               <td><%= record.name %></td>
               <td><%= record.type %></td>
+              <td><%= record.sourceBookingId || '—' %></td>
               <td><span class="status-badge"><%= record.status %></span></td>
               <td><%= record.lastUpdated %></td>
               <td><a href="/modules/records/<%= record.id %>">View</a></td>
             </tr>
-          <% }) %>
+          <% }); %>
         </tbody>
       </table>
     </div>

@@ -1,49 +1,39 @@
-<section class="section">
-  <div class="container narrow">
-    <p class="eyebrow">Public flow</p>
-    <h1>Request a booking</h1>
-    <p class="lead">Submit a sample request and watch it appear in the admin dashboard.</p>
+<section class="section booking-intake-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Public intake</p>
+      <h1>What would you like to arrange?</h1>
+      <p class="lead">
+        This demo shows how different kinds of bookings and enquiries can enter one shared operational workflow.
+        Choose a pattern below, submit a fictional request, then follow it into the admin side.
+      </p>
+    </div>
 
-    <% if (errors && errors.length) { %>
-      <div class="alert">
-        <strong>Please check:</strong>
-        <ul>
-          <% errors.forEach((error) => { %><li><%= error %></li><% }) %>
-        </ul>
-      </div>
-    <% } %>
+    <div class="booking-type-grid">
+      <% bookingTypes.forEach((type) => { %>
+        <article class="booking-type-card">
+          <span class="booking-type-kicker"><%= type.shortLabel %></span>
+          <h2><%= type.label %></h2>
+          <p><%= type.summary %></p>
+          <p class="booking-type-fit"><strong>Useful for:</strong> <%= type.bestFor %></p>
+          <a class="btn" href="/book?type=<%= encodeURIComponent(type.value) %>">Try this flow</a>
+        </article>
+      <% }); %>
+    </div>
 
-    <form class="form-card" method="post" action="/book">
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-      <label>Name
-        <input name="name" value="<%= form.name || '' %>" required>
-      </label>
-      <label>Email
-        <input type="email" name="email" value="<%= form.email || '' %>" required>
-      </label>
-      <label>Phone
-        <input name="phone" value="<%= form.phone || '' %>">
-      </label>
-      <label>Service
-        <select name="service" required>
-          <option value="">Choose a service</option>
-          <% services.forEach((service) => { %>
-            <option value="<%= service.name %>" <%= form.service === service.name ? 'selected' : '' %>><%= service.name %></option>
-          <% }) %>
-        </select>
-      </label>
-      <div class="two-col">
-        <label>Date
-          <input type="date" name="date" value="<%= form.date || '' %>" required>
-        </label>
-        <label>Time
-          <input type="time" name="time" value="<%= form.time || '' %>" required>
-        </label>
+    <div class="workflow-callout booking-shared-callout">
+      <div>
+        <p class="eyebrow">One operational layer</p>
+        <h2>Different inputs. One manageable queue.</h2>
+        <p>
+          These are not four separate products. Each public flow becomes a structured request inside the same admin system,
+          where staff can review context, spot clashes, update status and export data.
+        </p>
       </div>
-      <label>Message
-        <textarea name="message" rows="4"><%= form.message || '' %></textarea>
-      </label>
-      <button class="btn" type="submit">Submit request</button>
-    </form>
+      <div class="actions">
+        <a class="btn btn-secondary" href="/admin">Open shared admin</a>
+        <a class="btn btn-secondary" href="/workflow">See the workflow</a>
+      </div>
+    </div>
   </div>
 </section>

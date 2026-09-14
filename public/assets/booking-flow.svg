@@ -1,17 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Flexible intake converging into one operational workflow</title>
+  <desc id="desc">Appointment, venue, group and recurring requests feed one shared admin queue, then records, invoices, reports and export.</desc>
   <rect width="900" height="520" rx="36" fill="#fff9ec"/>
-  <rect x="70" y="90" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
-  <rect x="345" y="90" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
-  <rect x="620" y="90" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
-  <rect x="210" y="300" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
-  <rect x="485" y="300" width="210" height="110" rx="22" fill="#ffffff" stroke="#d8dce5"/>
-  <text x="175" y="145" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Inquiry</text>
-  <text x="450" y="145" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Booking</text>
-  <text x="725" y="145" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Admin</text>
-  <text x="315" y="355" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Status</text>
-  <text x="590" y="355" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#10254b">Export</text>
-  <path d="M280 145 H345" stroke="#a92820" stroke-width="6" stroke-linecap="round"/>
-  <path d="M555 145 H620" stroke="#a92820" stroke-width="6" stroke-linecap="round"/>
-  <path d="M725 200 C725 260 590 260 590 300" stroke="#a92820" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <path d="M420 355 H485" stroke="#a92820" stroke-width="6" stroke-linecap="round"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g fill="#ffffff" stroke="#d8dce5" stroke-width="2">
+      <rect x="45" y="58" width="180" height="92" rx="20"/>
+      <rect x="255" y="58" width="180" height="92" rx="20"/>
+      <rect x="465" y="58" width="180" height="92" rx="20"/>
+      <rect x="675" y="58" width="180" height="92" rx="20"/>
+      <rect x="285" y="225" width="330" height="105" rx="24"/>
+      <rect x="130" y="400" width="270" height="82" rx="22"/>
+      <rect x="500" y="400" width="270" height="82" rx="22"/>
+    </g>
+
+    <g fill="#10254b" text-anchor="middle">
+      <text x="135" y="99" font-size="20" font-weight="700">Appointment</text>
+      <text x="135" y="124" font-size="14">service + time</text>
+
+      <text x="345" y="99" font-size="20" font-weight="700">Venue / Resource</text>
+      <text x="345" y="124" font-size="14">resource + clash check</text>
+
+      <text x="555" y="99" font-size="20" font-weight="700">Group / Visit</text>
+      <text x="555" y="124" font-size="14">capacity + staff review</text>
+
+      <text x="765" y="99" font-size="20" font-weight="700">Recurring</text>
+      <text x="765" y="124" font-size="14">series + availability</text>
+
+      <text x="450" y="267" font-size="26" font-weight="700">Shared admin queue</text>
+      <text x="450" y="298" font-size="16">review · status · context · export</text>
+
+      <text x="265" y="435" font-size="21" font-weight="700">Records / Invoices</text>
+      <text x="265" y="460" font-size="14">downstream where appropriate</text>
+
+      <text x="635" y="435" font-size="21" font-weight="700">Reports / Export</text>
+      <text x="635" y="460" font-size="14">portable operational data</text>
+    </g>
+
+    <g stroke="#a92820" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M135 150 C135 190 325 185 350 225"/>
+      <path d="M345 150 C345 185 390 190 410 225"/>
+      <path d="M555 150 C555 185 510 190 490 225"/>
+      <path d="M765 150 C765 190 575 185 550 225"/>
+      <path d="M400 330 C400 365 330 365 300 400"/>
+      <path d="M500 330 C500 365 570 365 600 400"/>
+    </g>
+
+    <g fill="#a92820">
+      <circle cx="350" cy="225" r="5"/>
+      <circle cx="410" cy="225" r="5"/>
+      <circle cx="490" cy="225" r="5"/>
+      <circle cx="550" cy="225" r="5"/>
+    </g>
+  </g>
 </svg>

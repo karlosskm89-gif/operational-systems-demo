@@ -2,16 +2,16 @@
   {
     "name": "Initial Consultation",
     "duration": "45 mins",
-    "summary": "A calm first appointment for new client needs and next-step planning."
+    "summary": "A first appointment for understanding needs and agreeing next steps."
+  },
+  {
+    "name": "Standard Appointment",
+    "duration": "60 mins",
+    "summary": "A general scheduled appointment for an established service."
   },
   {
     "name": "Follow-up Session",
     "duration": "30 mins",
-    "summary": "A shorter appointment for returning clients and ongoing support."
-  },
-  {
-    "name": "Wellness Assessment",
-    "duration": "60 mins",
-    "summary": "A structured session for reviewing needs, goals, and suitable support options."
+    "summary": "A shorter returning appointment for follow-up work."
   }
 ]

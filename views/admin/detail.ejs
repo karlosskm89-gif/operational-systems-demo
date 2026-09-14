@@ -1,32 +1,51 @@
 <section class="section">
   <div class="container narrow">
-    <a href="/admin">← Back to dashboard</a>
-    <p class="demo-notice">Public demo admin — this is sample data only. Saving a status demonstrates workflow behaviour; it does not contact anyone or change real records.</p>
+    <a href="/admin">← Back to shared queue</a>
+    <p class="demo-notice">Public demo admin — sample data only. Saving a status demonstrates workflow behaviour; it does not contact anyone or change real records.</p>
+
     <div class="detail-card">
-      <p class="eyebrow">Booking detail</p>
-      <h1><%= booking.id %></h1>
+      <div class="detail-heading-row">
+        <div>
+          <p class="eyebrow"><%= booking.typeLabel %></p>
+          <h1><%= booking.id %></h1>
+        </div>
+        <span class="status"><%= booking.status %></span>
+      </div>
 
       <dl class="details">
         <div><dt>Name</dt><dd><%= booking.name %></dd></div>
         <div><dt>Email</dt><dd><%= booking.email %></dd></div>
         <div><dt>Phone</dt><dd><%= booking.phone || "Not provided" %></dd></div>
-        <div><dt>Service</dt><dd><%= booking.service %></dd></div>
-        <div><dt>Date/Time</dt><dd><%= booking.date %> at <%= booking.time %></dd></div>
-        <div><dt>Status</dt><dd><span class="status"><%= booking.status %></span></dd></div>
+        <div><dt>Request</dt><dd><%= booking.subject %></dd></div>
+        <div><dt>Schedule</dt><dd><%= booking.schedule %></dd></div>
+        <% if (booking.attendees) { %><div><dt>People</dt><dd><%= booking.attendees %></dd></div><% } %>
+        <% if (booking.resource) { %><div><dt>Resource</dt><dd><%= booking.resource %></dd></div><% } %>
+        <% if (booking.bookingType === 'group') { %><div><dt>Group type</dt><dd><%= booking.groupType %></dd></div><% } %>
+        <% if (booking.bookingType === 'recurring') { %><div><dt>Series</dt><dd><%= booking.occurrences %> occurrences</dd></div><% } %>
+        <% if (booking.bookingType !== 'appointment') { %><div><dt>Requirements</dt><dd><%= booking.requirementsText %></dd></div><% } %>
+        <div><dt>Availability / review</dt><dd><span class="status <%= booking.conflictIds.length ? 'status-warning' : '' %>"><%= booking.availabilityStatus %></span></dd></div>
+        <% if (booking.conflictIds.length) { %><div><dt>Potential conflict</dt><dd><%= booking.conflictIds.join(', ') %></dd></div><% } %>
       </dl>
 
+      <% if (booking.bookingType === 'recurring' && booking.occurrenceDates.length) { %>
+        <h2>Sample recurrence</h2>
+        <div class="date-chip-row">
+          <% booking.occurrenceDates.forEach((date) => { %><span class="date-chip"><%= date %></span><% }); %>
+        </div>
+      <% } %>
+
       <% if (booking.message) { %>
-        <h2>Message</h2>
+        <h2>Notes</h2>
         <p><%= booking.message %></p>
       <% } %>
 
       <form method="post" action="/admin/bookings/<%= booking.id %>/status" class="inline-form">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-        <label>Update status
+        <label>Update workflow status
           <select name="status">
-            <% ["New", "Confirmed", "Follow-up", "Closed"].forEach((item) => { %>
+            <% statuses.forEach((item) => { %>
               <option value="<%= item %>" <%= booking.status === item ? 'selected' : '' %>><%= item %></option>
-            <% }) %>
+            <% }); %>
           </select>
         </label>
         <button class="btn" type="submit">Save sample status</button>

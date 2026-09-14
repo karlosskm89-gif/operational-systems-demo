@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.0.0 — Flexible booking & enquiry vNext
+
+- Refit the existing Booking Workflow instead of creating prospect-specific parallel demos
+- Added four reusable intake patterns: Appointment / Service, Venue / Resource, Group / Visit and Recurring Booking
+- Added a neutral `/book` chooser with type-specific public forms
+- Added shared admin filtering by workflow status and request type
+- Added venue/resource time-overlap checks and bounded recurring-series clash checks
+- Expanded workflow states to New, Availability checked, Confirmed, Follow-up, Completed and Cancelled
+- Diversified fictional sample data so the proof asset no longer reads as healthcare/wellness-specific
+- Added source booking/record references to the Records and Invoice proof modules
+- Expanded reports and CSV exports around the broader operational model
+- Added validation and controller tests for the new intake architecture
+- Reworked the workflow illustration around four intake patterns converging into one operational queue
+- Preserved the same reusable ASR Operational Systems Demo identity and deployment target
+
 ## 1.4.0 — ASR base layer and Operational Modules
 
 - Added ASR base pages: About, Systems, FAQs and Contact/Next Steps

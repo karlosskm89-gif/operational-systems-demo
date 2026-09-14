@@ -3,13 +3,34 @@
     <div class="success-card">
       <p class="eyebrow">Request received</p>
       <h1>Thanks, <%= booking.name %>.</h1>
-      <p>Your sample booking request has been created as <strong><%= booking.id %></strong>.</p>
+      <p>Your fictional <strong><%= booking.typeLabel.toLowerCase() %></strong> request has entered the shared admin workflow as <strong><%= booking.id %></strong>.</p>
+
       <dl class="details">
-        <div><dt>Service</dt><dd><%= booking.service %></dd></div>
-        <div><dt>Date</dt><dd><%= booking.date %> at <%= booking.time %></dd></div>
-        <div><dt>Status</dt><dd><span class="status"><%= booking.status %></span></dd></div>
+        <div><dt>Type</dt><dd><%= booking.typeLabel %></dd></div>
+        <div><dt>Request</dt><dd><%= booking.subject %></dd></div>
+        <div><dt>Schedule</dt><dd><%= booking.schedule %></dd></div>
+        <% if (booking.attendees) { %><div><dt>People</dt><dd><%= booking.attendees %></dd></div><% } %>
+        <% if (booking.bookingType !== 'appointment') { %><div><dt>Requirements</dt><dd><%= booking.requirementsText %></dd></div><% } %>
+        <div><dt>Availability / review</dt><dd><span class="status <%= booking.conflictIds.length ? 'status-warning' : '' %>"><%= booking.availabilityStatus %></span></dd></div>
+        <div><dt>Workflow status</dt><dd><span class="status"><%= booking.status %></span></dd></div>
       </dl>
-      <a class="btn" href="/admin">View in admin demo</a>
+
+      <% if (booking.conflictIds.length) { %>
+        <div class="availability-note warning-note">
+          <strong>Demo clash detected.</strong>
+          <p>This request overlaps sample booking <%= booking.conflictIds.join(', ') %>. The request is still captured so staff can review alternatives rather than silently rejecting it.</p>
+        </div>
+      <% } else if (['venue', 'recurring'].includes(booking.bookingType)) { %>
+        <div class="availability-note">
+          <strong>No sample clash found.</strong>
+          <p>This is a demonstration availability check, not a promise of real-world availability.</p>
+        </div>
+      <% } %>
+
+      <div class="actions">
+        <a class="btn" href="/admin/bookings/<%= booking.id %>">Open this request in admin</a>
+        <a class="btn btn-secondary" href="/book">Try another flow</a>
+      </div>
     </div>
   </div>
 </section>

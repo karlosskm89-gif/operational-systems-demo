@@ -4,17 +4,26 @@ const bookingController = require("../controllers/bookingController");
 
 router.get("/", (req, res) => {
   const status = req.query.status || "All";
-  let bookings = bookingController.getBookings();
+  const type = req.query.type || "All";
+  const allBookings = bookingController.getBookings();
+  let bookings = [...allBookings];
 
   if (status !== "All") {
     bookings = bookings.filter((booking) => booking.status === status);
   }
 
+  if (type !== "All") {
+    bookings = bookings.filter((booking) => booking.bookingType === type);
+  }
+
   res.render("admin/dashboard", {
     title: "Admin Dashboard",
-    bookings,
+    bookings: bookings.map(bookingController.toViewModel),
     status,
-    stats: bookingController.getStats()
+    type,
+    statuses: bookingController.ALLOWED_STATUSES,
+    bookingTypes: bookingController.getBookingTypes(),
+    stats: bookingController.getStats(allBookings)
   });
 });
 
@@ -24,7 +33,8 @@ router.get("/bookings/:id", (req, res) => {
 
   res.render("admin/detail", {
     title: `Booking ${booking.id}`,
-    booking
+    booking: bookingController.toViewModel(booking),
+    statuses: bookingController.ALLOWED_STATUSES
   });
 });
 
@@ -40,14 +50,24 @@ router.post("/reset-demo", (req, res, next) => req.requireCsrf(req, res, next), 
 
 router.get("/export.csv", (req, res) => {
   const rows = bookingController.getBookings();
-  const header = ["id", "name", "email", "phone", "service", "date", "time", "status"];
+  const header = [
+    "id", "bookingType", "name", "email", "phone", "service", "resource", "groupType", "activity",
+    "date", "time", "startTime", "endTime", "timeWindow", "attendees", "recurrence", "occurrences",
+    "requirements", "availabilityStatus", "conflictIds", "status", "message"
+  ];
+
+  const csvValue = (row, field) => {
+    const value = Array.isArray(row[field]) ? row[field].join(" | ") : row[field];
+    return `"${String(value ?? "").replaceAll('"', '""')}"`;
+  };
+
   const csv = [
     header.join(","),
-    ...rows.map((row) => header.map((field) => `"${String(row[field] || "").replaceAll('"', '""')}"`).join(","))
+    ...rows.map((row) => header.map((field) => csvValue(row, field)).join(","))
   ].join("\n");
 
   res.header("Content-Type", "text/csv");
-  res.attachment("booking-flow-demo-export.csv");
+  res.attachment("operational-booking-demo-export.csv");
   res.send(csv);
 });
 

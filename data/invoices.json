@@ -1,29 +1,32 @@
 [
   {
     "id": "INV-2401",
-    "client": "Demo Client A",
-    "service": "Booking workflow setup",
-    "amount": "450.00",
-    "status": "Draft",
-    "issued": "2026-05-02",
-    "due": "2026-05-16"
+    "client": "Example Consultancy Client",
+    "service": "Scheduled service",
+    "amount": "180.00",
+    "status": "Paid",
+    "issued": "2026-09-03",
+    "due": "2026-09-10",
+    "sourceRecordId": "REC-1001"
   },
   {
     "id": "INV-2402",
-    "client": "Demo Organisation C",
-    "service": "Operational support block",
-    "amount": "750.00",
+    "client": "Example Room Hire",
+    "service": "Venue / resource hire",
+    "amount": "320.00",
     "status": "Sent",
-    "issued": "2026-05-04",
-    "due": "2026-05-18"
+    "issued": "2026-09-08",
+    "due": "2026-09-22",
+    "sourceRecordId": "REC-1004"
   },
   {
     "id": "INV-2403",
-    "client": "Demo Client B",
-    "service": "Admin workflow refinement",
-    "amount": "300.00",
-    "status": "Paid",
-    "issued": "2026-04-20",
-    "due": "2026-05-04"
+    "client": "Example Weekly Class",
+    "service": "Recurring resource use",
+    "amount": "480.00",
+    "status": "Draft",
+    "issued": "2026-09-12",
+    "due": "2026-09-26",
+    "sourceRecordId": "REC-1003"
   }
 ]

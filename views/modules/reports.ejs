@@ -6,23 +6,22 @@
       <p class="eyebrow">Reporting and export capability</p>
       <h1>Reports & Export Capability</h1>
       <p class="lead">
-        This page shows how operational data can be summarised and exported so it remains useful
-        outside the system itself.
+        Structured intake becomes more valuable when it can be summarised across request types and carried into wider operational reporting.
       </p>
     </div>
 
     <div class="stat-grid">
       <article class="stat">
+        <strong><%= bookingStats.total %></strong>
+        <span>Total booking / enquiry requests</span>
+      </article>
+      <article class="stat">
+        <strong><%= bookingStats.actionCount %></strong>
+        <span>Requests needing action</span>
+      </article>
+      <article class="stat">
         <strong><%= stats.recordsTotal %></strong>
-        <span>Total records</span>
-      </article>
-      <article class="stat">
-        <strong><%= stats.recordsActive %></strong>
-        <span>Active records</span>
-      </article>
-      <article class="stat">
-        <strong><%= stats.invoicesTotal %></strong>
-        <span>Total invoices</span>
+        <span>Operational records</span>
       </article>
       <article class="stat">
         <strong><%= stats.invoicesOpen %></strong>
@@ -30,29 +29,36 @@
       </article>
     </div>
 
+    <div class="report-breakdown">
+      <h2>Sample intake mix</h2>
+      <div class="booking-type-grid compact-type-grid">
+        <% typeBreakdown.forEach((type) => { %>
+          <article class="booking-type-card report-type-card">
+            <strong class="report-count"><%= type.count %></strong>
+            <h3><%= type.shortLabel %></h3>
+            <p>Requests currently represented in the sample queue.</p>
+          </article>
+        <% }); %>
+      </div>
+    </div>
+
     <div class="card-grid module-grid">
       <article class="card">
+        <h3>Booking / enquiry export</h3>
+        <p>Export the shared intake queue, including type-specific context, review state and potential conflict references.</p>
+        <a class="btn" href="/admin/export.csv">Export booking CSV</a>
+      </article>
+
+      <article class="card">
         <h3>Invoice export</h3>
-        <p>
-          Export invoice data as CSV for finance, reconciliation or wider reporting workflows.
-        </p>
-        <a class="btn" href="/modules/invoices-export.csv">Export invoice CSV</a>
+        <p>Export invoice data for finance, reconciliation or wider reporting workflows.</p>
+        <a class="btn btn-secondary" href="/modules/invoices-export.csv">Export invoice CSV</a>
       </article>
 
       <article class="card">
-        <h3>Records visibility</h3>
-        <p>
-          Records stay reviewable and structured, helping preserve operational history over time.
-        </p>
+        <h3>Operational history</h3>
+        <p>Records preserve context after intake, helping the organisation avoid treating every form submission as an isolated event.</p>
         <a class="btn btn-secondary" href="/modules/records">View records</a>
-      </article>
-
-      <article class="card">
-        <h3>Workflow context</h3>
-        <p>
-          Reporting becomes more useful when bookings, records and invoices are treated as connected work rather than isolated screens.
-        </p>
-        <a class="btn btn-secondary" href="/workflow">View workflow overview</a>
       </article>
     </div>
   </div>

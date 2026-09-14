@@ -1,0 +1,198 @@
+<section class="section booking-intake-section">
+  <div class="container narrow">
+    <p class="breadcrumb"><a href="/book">← Choose another booking type</a></p>
+
+    <div class="booking-form-heading">
+      <p class="eyebrow">Public flow · <%= selectedType.shortLabel %></p>
+      <h1><%= selectedType.label %></h1>
+      <p class="lead"><%= selectedType.summary %></p>
+      <p class="demo-notice">Demo only — use fictional details. Submissions are stored as resettable sample data.</p>
+    </div>
+
+    <% if (errors && errors.length) { %>
+      <div class="alert" role="alert">
+        <strong>Please check:</strong>
+        <ul>
+          <% errors.forEach((error) => { %><li><%= error %></li><% }); %>
+        </ul>
+      </div>
+    <% } %>
+
+    <form class="form-card booking-form" method="post" action="/book">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <input type="hidden" name="bookingType" value="<%= selectedType.value %>">
+
+      <fieldset class="form-section">
+        <legend>Your details</legend>
+        <div class="two-col">
+          <label>Name
+            <input name="name" value="<%= form.name || '' %>" required autocomplete="name">
+          </label>
+          <label>Email
+            <input type="email" name="email" value="<%= form.email || '' %>" required autocomplete="email">
+          </label>
+        </div>
+        <label>Phone <span class="optional-label">Optional</span>
+          <input name="phone" value="<%= form.phone || '' %>" autocomplete="tel">
+        </label>
+      </fieldset>
+
+      <% if (selectedType.value === 'appointment') { %>
+        <fieldset class="form-section">
+          <legend>Appointment details</legend>
+          <label>Service
+            <select name="service" required>
+              <option value="">Choose a service</option>
+              <% services.forEach((service) => { %>
+                <option value="<%= service.name %>" <%= form.service === service.name ? 'selected' : '' %>><%= service.name %> · <%= service.duration %></option>
+              <% }); %>
+            </select>
+          </label>
+          <div class="two-col">
+            <label>Date
+              <input type="date" name="date" value="<%= form.date || '' %>" required>
+            </label>
+            <label>Time
+              <input type="time" name="time" value="<%= form.time || '' %>" required>
+            </label>
+          </div>
+          <p class="form-explainer">This path demonstrates a familiar service or appointment request without making that pattern the centre of the whole system.</p>
+        </fieldset>
+      <% } %>
+
+      <% if (selectedType.value === 'venue') { %>
+        <fieldset class="form-section">
+          <legend>Venue or resource details</legend>
+          <label>Room / resource
+            <select name="resource" required>
+              <option value="">Choose a resource</option>
+              <% options.resources.forEach((resource) => { %>
+                <option value="<%= resource %>" <%= form.resource === resource ? 'selected' : '' %>><%= resource %></option>
+              <% }); %>
+            </select>
+          </label>
+          <div class="three-col">
+            <label>Date
+              <input type="date" name="date" value="<%= form.date || '' %>" required>
+            </label>
+            <label>Start time
+              <input type="time" name="startTime" value="<%= form.startTime || '' %>" required>
+            </label>
+            <label>End time
+              <input type="time" name="endTime" value="<%= form.endTime || '' %>" required>
+            </label>
+          </div>
+          <label>Expected attendees
+            <input type="number" min="1" max="999" name="attendees" value="<%= form.attendees || '' %>" required>
+          </label>
+          <p class="form-explainer">The demo checks this request against existing sample bookings for the same resource and overlapping time.</p>
+        </fieldset>
+      <% } %>
+
+      <% if (selectedType.value === 'group') { %>
+        <fieldset class="form-section">
+          <legend>Group or visit details</legend>
+          <label>Group type
+            <select name="groupType" required>
+              <option value="">Choose a group type</option>
+              <% options.groupTypes.forEach((groupType) => { %>
+                <option value="<%= groupType %>" <%= form.groupType === groupType ? 'selected' : '' %>><%= groupType %></option>
+              <% }); %>
+            </select>
+          </label>
+          <div class="two-col">
+            <label>Preferred date
+              <input type="date" name="date" value="<%= form.date || '' %>" required>
+            </label>
+            <label>Preferred time window
+              <select name="timeWindow" required>
+                <option value="">Choose a window</option>
+                <% options.timeWindows.forEach((window) => { %>
+                  <option value="<%= window %>" <%= form.timeWindow === window ? 'selected' : '' %>><%= window %></option>
+                <% }); %>
+              </select>
+            </label>
+          </div>
+          <label>Expected group size
+            <input type="number" min="1" max="999" name="attendees" value="<%= form.attendees || '' %>" required>
+          </label>
+          <p class="form-explainer">This path intentionally stays request-led: staff review the group, capacity and practical requirements before confirming anything.</p>
+        </fieldset>
+      <% } %>
+
+      <% if (selectedType.value === 'recurring') { %>
+        <fieldset class="form-section">
+          <legend>Recurring booking details</legend>
+          <label>Activity / use
+            <input name="activity" value="<%= form.activity || '' %>" placeholder="e.g. Weekly evening class" required>
+          </label>
+          <label>Room / resource
+            <select name="resource" required>
+              <option value="">Choose a resource</option>
+              <% options.resources.forEach((resource) => { %>
+                <option value="<%= resource %>" <%= form.resource === resource ? 'selected' : '' %>><%= resource %></option>
+              <% }); %>
+            </select>
+          </label>
+          <div class="three-col">
+            <label>First date
+              <input type="date" name="date" value="<%= form.date || '' %>" required>
+            </label>
+            <label>Start time
+              <input type="time" name="startTime" value="<%= form.startTime || '' %>" required>
+            </label>
+            <label>End time
+              <input type="time" name="endTime" value="<%= form.endTime || '' %>" required>
+            </label>
+          </div>
+          <div class="two-col">
+            <label>Pattern
+              <select name="recurrence" required>
+                <option value="">Choose a pattern</option>
+                <% options.recurrencePatterns.forEach((pattern) => { %>
+                  <option value="<%= pattern.value %>" <%= form.recurrence === pattern.value ? 'selected' : '' %>><%= pattern.label %></option>
+                <% }); %>
+              </select>
+            </label>
+            <label>Number of occurrences
+              <select name="occurrences" required>
+                <option value="">Choose a series length</option>
+                <% options.recurrenceCounts.forEach((count) => { %>
+                  <option value="<%= count %>" <%= String(form.occurrences || '') === String(count) ? 'selected' : '' %>><%= count %></option>
+                <% }); %>
+              </select>
+            </label>
+          </div>
+          <label>Expected attendees
+            <input type="number" min="1" max="999" name="attendees" value="<%= form.attendees || '' %>" required>
+          </label>
+          <p class="form-explainer">The recurrence model is deliberately bounded for the demo: enough to prove repeated-resource availability checking without pretending to be a full calendar platform.</p>
+        </fieldset>
+      <% } %>
+
+      <% if (selectedType.value !== 'appointment') { %>
+        <% const selectedRequirements = Array.isArray(form.requirements) ? form.requirements : (form.requirements ? [form.requirements] : []); %>
+        <fieldset class="form-section">
+          <legend>Practical requirements <span class="optional-label">Optional</span></legend>
+          <div class="checkbox-grid">
+            <% options.requirements.forEach((requirement) => { %>
+              <label class="checkbox-option">
+                <input type="checkbox" name="requirements" value="<%= requirement %>" <%= selectedRequirements.includes(requirement) ? 'checked' : '' %>>
+                <span><%= requirement %></span>
+              </label>
+            <% }); %>
+          </div>
+        </fieldset>
+      <% } %>
+
+      <label>Notes <span class="optional-label">Optional</span>
+        <textarea name="message" rows="4" placeholder="Anything staff should know before reviewing the request"><%= form.message || '' %></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn" type="submit">Submit sample request</button>
+        <a class="text-link" href="/book">Choose another flow</a>
+      </div>
+    </form>
+  </div>
+</section>
